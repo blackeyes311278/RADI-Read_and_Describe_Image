@@ -146,13 +146,13 @@ if __name__ == "__main__":
 ### Usage Examples: ###
 
 ### Fix GPT-2 (original functionality)
-#python fix_huggingface_models.py --model gpt2
+#python ./fixes/fix_huggingface_models.py --model gpt2
 
 ### Fix BERT
-#python fix_huggingface_models.py --model bert-base-uncased
+#python ./fixes/fix_huggingface_models.py --model bert-base-uncased
 
 ### Fix custom model with extra packages
-#python fix_huggingface_models.py --model microsoft/DialoGPT-medium --extra-packages datasets
+#python ./fixes/fix_huggingface_models.py --model microsoft/DialoGPT-medium --extra-packages datasets
 
 ### Clean only without installation
-#python fix_huggingface_models.py --clean-only
+#python ./fixes/fix_huggingface_models.py --clean-only
