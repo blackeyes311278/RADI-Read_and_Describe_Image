@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="upload-form">
+    <h2>📤 Upload Your Image</h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'process_image' %}" id="uploadForm">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*" required class="file-input">
+        <br>
+        <button type="submit" class="btn">🚀 Analyze Image & Generate Description</button>
+    </form>
+</div>
+
+{% if error %}
+<div style="background: #e74c3c; color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+    <strong>Error:</strong> {{ error }}
+</div>
+{% endif %}
+
+<div class="info-section">
+    <h3>🎯 How it works:</h3>
+    <ul>
+        <li>📷 Upload any image (JPEG, PNG, etc.)</li>
+        <li>🔍 YOLO model detects objects in the image</li>
+        <li>🤖 GPT-2 generates descriptive text based on detected objects</li>
+        <li>📊 View results with annotated image and AI-generated description</li>
+    </ul>
+    
+    <h3>🏷️ Supported Object Types:</h3>
+    <p>People, vehicles, animals, furniture, electronics, and 80+ other object categories</p>
+</div>
+{% endblock %}

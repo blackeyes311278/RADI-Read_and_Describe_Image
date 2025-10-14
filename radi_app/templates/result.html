@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<button onclick="window.location.href='{% url 'home' %}'" class="btn back-btn">← Back to Upload</button>
+
+<div class="result-section">
+    <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">🎉 Analysis Results</h2>
+    
+    <div class="image-comparison">
+        <div class="image-card">
+            <h3>🖼️ Original Image</h3>
+            <img src="{{ input_image }}" alt="Uploaded Image" class="image-preview">
+        </div>
+        <div class="image-card">
+            <h3>🔍 Detected Objects</h3>
+            <img src="{{ output_image }}" alt="Annotated Image" class="image-preview">
+            <div style="margin-top: 15px;">
+                <a href="{{ output_image }}" download="annotated_image.jpg" class="btn btn-download">
+                    📥 Download Annotated Image
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="objects-list">
+        <h3>📊 Detected Objects ({{ objects_count }} found)</h3>
+        <div class="objects-grid">
+            {% for obj in detected_objects %}
+            <div class="object-item">
+                {{ obj.class }} - {{ obj.confidence }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="description-box">
+        <h3>🤖 AI-Generated Description</h3>
+        <p>{{ description }}</p>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <button onclick="window.location.href='{% url 'home' %}'" class="btn">🔄 Analyze Another Image</button>
+</div>
+{% endblock %}
