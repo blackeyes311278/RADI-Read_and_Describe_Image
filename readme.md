@@ -18,7 +18,7 @@ for Virtual Environment (Recommended):
 
     python -m venv .radi_main_venv
 
-    source .radi_main_venv/Scrip/activate
+    source .radi_main_venv/Scripts/activate
  
 pip install -r requirements.txt
 
