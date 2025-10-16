@@ -16,7 +16,7 @@ for Virtual Environment (Recommended):
 
     conda deactivate
 
-    python -3.11 -m venv .radi_venv
+    py -3.11 -m venv .radi_venv
 
     source .radi_venv/Scripts/activate
  
