@@ -6,9 +6,19 @@ Python-3.11.9, VSCode, MiniConda, Git
 BASH Commands (run in vsCode) :
 ==========================================
 
-conda create --name radi_env python=3.11.9
+for Conda Environment:
 
-conda activate radi_env
+    conda create --name radi_env python=3.11.9
+
+    conda activate radi_env
+
+for Virtual Environment (Recommended):
+
+    conda deactivate
+
+    python -m venv .radi_main_venv
+
+    source .radi_main_venv/Scrip/activate
  
 pip install -r requirements.txt
 
