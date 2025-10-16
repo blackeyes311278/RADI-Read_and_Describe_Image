@@ -9,3 +9,8 @@ ultralytics==8.0.200
 accelerate==0.24.1
 jupyter==1.0.0
 hf_xet==0.1.0
+
+matplotlib
+kagglehub
+scikit-learn
+pyyaml
