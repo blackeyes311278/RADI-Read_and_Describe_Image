@@ -16,9 +16,9 @@ for Virtual Environment (Recommended):
 
     conda deactivate
 
-    python -m venv ..radi_image_venv
+    python -3.11 -m venv .radi_venv
 
-    source ..radi_image_venv/Scripts/activate
+    source .radi_venv/Scripts/activate
  
 pip install -r requirements.txt
 
@@ -33,21 +33,3 @@ python manage.py migrate
 python manage.py runserver
 
 (ctrl+click on http://127.0.0.1:8000/)
-
-
-
-Clear Separation:
-
-Cell 1: Installation commands
-
-Cell 2: All imports together
-
-Cells 3-6: Base pipeline (always run)
-
-Cells 7-13: Optional training pipeline
-
-Logical Flow:
-
-Base models → Pipeline functions → Testing
-
-Optional: Download → Train → Save → Load trained model

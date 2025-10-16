@@ -14,3 +14,4 @@ matplotlib
 kagglehub
 scikit-learn
 pyyaml
+pandas
